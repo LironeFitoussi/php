@@ -1,19 +1,23 @@
 <?php
+$pageTitle = 'Ingredients';
+$headerImg = 'images/pexels-julia-volk-5273044.jpg';
 include 'inc/header.inc.php';
 ?>
-<h1>Our mission</h1>
+<h1>Our ingredients</h1>
 <p>
-  At Culinary Cove, our core mission is to offer a sanctuary for those who
-  seek exceptional flavors and culinary experiences. We pride ourselves on
-  sourcing only the finest ingredients, carefully crafting dishes that
-  bridge the gap between traditional and modern cooking techniques. Our
-  culinary team is driven by a shared passion for gastronomy, always
-  striving to create unforgettable meals that resonate with our guests.
+  At Culinary Cove, our ethos is deeply rooted in the belief that
+  exceptional cuisine starts with exceptional ingredients. That's why we
+  are committed to using only natural, locally-sourced produce, free-range
+  meats, and sustainably caught seafood. Our culinary team works closely
+  with local farmers and artisans to ensure that the ingredients we use
+  are not only fresh but also ethically and sustainably produced. This
+  unwavering commitment to quality is evident in the vibrant flavors and
+  wholesome nutrition that characterize each dish on our menu.
 </p>
 <figure style="text-align: center">
   <img
     style="max-width: 20rem"
-    src="images/pexels-burak-the-weekender-735869.jpg"
+    src="images/pexels-lisa-fotios-1126728.jpg"
     alt="Our amazing restaurant" />
   <figcaption>Our amazing restaurant</figcaption>
 </figure>
