@@ -18,6 +18,7 @@
         <nav>
             <a href="our-mission.php">Our mission</a>
             <a href="ingredients.php">Our Ingredients</a>
+            <a href="menu.php">Menu</a>
             <!-- <a href="mailto:culinary-cove@example.com">send us an E-Mail!</a> -->
         </nav>
     </header>

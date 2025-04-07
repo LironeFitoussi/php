@@ -1,8 +1,11 @@
-<!-- Should be turned into a header image -->
-<img src="images/pexels-fwstudio-172289.jpg" />
+<?php
+$pageTitle = 'Menu';
+$headerImg = "images/pexels-fwstudio-172289.jpg";
+include 'inc/header.inc.php';
+?>
 
 <h1>Our menu</h1>
-  
+
 <h2>Starters</h2>
 <ul>
     <li><strong>Forest Mushroom Medley</strong> - A seasonal selection of wild mushrooms sautéed with garlic, fresh herbs, and a touch of white wine.</li>
@@ -16,10 +19,10 @@
 </ul>
 
 <figure style="text-align: center;">
-  <img style="max-width: 20rem;" 
-       src="images/pexels-rachel-claire-4577740.jpg" 
-       alt="Our amazing restaurant" />
-  <figcaption>Our amazing restaurant</figcaption>
+    <img style="max-width: 20rem;"
+        src="images/pexels-rachel-claire-4577740.jpg"
+        alt="Our amazing restaurant" />
+    <figcaption>Our amazing restaurant</figcaption>
 </figure>
 
 <h2>Main Courses</h2>
@@ -35,3 +38,7 @@
     <li><strong>Raw Berry Cheesecake</strong> - A dairy-free cheesecake made from cashews, with a fresh berry compote.</li>
     <li><strong>Honey Lavender Panna Cotta</strong> - A creamy Italian dessert infused with organic lavender and sweetened with local honey.</li>
 </ul>
+
+<?php
+include 'inc/footer.inc.php'
+?>
