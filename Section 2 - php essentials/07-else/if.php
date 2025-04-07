@@ -9,21 +9,14 @@
 <body>
     <pre><?php
         include 'vars.php';
-        // $serverStatus = 'maintenance';
 
         if ($serverStatus === 'ok') {
-            echo "🟢🟢🟢🟢\n";
             echo '🟢 Welcome to our website! Browse and enjoy our content'; 
-        };
-        if ($serverStatus !== 'ok') {
-            echo "🔴🔴🔴🔴\n";
+        } else if ($serverStatus === 'error') {
+            echo '❌ We got a serious error right now. Please just call us at: +1 (234) 5678';
+        } else {
             echo '🔴 We\'re currently undergoing maintenance. Please check back later';
         }
-
-        echo "\n----\n";
-        if ($serverStatus === 'ok') echo "🟢🟢🟢🟢\n"; 
-
-        if ($serverStatus !== 'ok') echo "🔴🔴🔴🔴\n";
     ?></pre>
 </body>
 </html>
