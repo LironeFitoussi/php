@@ -12,9 +12,9 @@
 ?></pre>
 
 <form action="form.php" method="POST">
-    <input type="text" name="username" value="<?php if (!empty($_POST['username'])) echo $_POST['username']; ?>" />
-    <input type="password" name="password" />
-    <input type="submit" value="Login!" />
+    <input type="text" name="username" value="<?php if (!empty($_POST['username'])) echo $_POST['username']?>">
+    <input type="password" name="password">
+    <input type="submit" value="Login!">
 </form>
 
 </body>
