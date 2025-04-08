@@ -11,10 +11,14 @@
     var_dump($_GET);
 
 ?></pre>
-
-<?php if (!empty($_GET['book'])): ?>
-    <h1><?php echo $_GET['book']; ?></h1>
-<?php endif; ?>
-
+    <?php if (!empty($_GET['book'])) : ?>
+        <h1>
+            <?php echo ($_GET['book']); ?>
+        </h1>
+    <?php endif; ?>
 </body>
 </html>
+
+
+<!-- Example url  -->
+<!-- ?book=Load%20of%20the%20Rings&author=JRR%20Talkein -->
