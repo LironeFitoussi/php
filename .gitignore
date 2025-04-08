@@ -1,0 +1,12 @@
+# php folders:
+php/
+
+# ignore uploads directories
+**/uploads/
+
+# ignore vendor directories
+**/vendor/
+
+# ignore temporary files and logs
+*.log
+tmp/
