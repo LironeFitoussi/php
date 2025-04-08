@@ -17,22 +17,21 @@ $categories = [
     'History',
 ];
 
-foreach ($categories AS $category) {
-    var_dump($category);
-    if ($category === 'Business') {
-        echo 'BUSINESS';
-    }
-}
+// @ supresses potential warnings for the rest of the line
+// This means, we can access $_GET['category'] even if it 
+// does not exist - we will then just get NULL, and no
+// warning will be shown.
+//
+// We will look at @ later in this course!
+@var_dump($_GET['category']);
+@var_dump($_POST['username']);
 
 ?></pre>
-    <ul>
-        <?php foreach ($categories AS $category): ?>
-            <li><?php echo $category; ?></li>
-        <?php endforeach; ?>
-    </ul>
-    <br /> 
-    <br /> 
-    <br /> 
+
+<form method="POST">
+    <input type="text" name="username">
+    <input type="submit" />
+</form>
 
 </body>
 </html>
