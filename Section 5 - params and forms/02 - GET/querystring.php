@@ -16,12 +16,13 @@
     <h1><?php echo $_GET['book']; ?></h1>
 <?php endif; ?>
 
-<?php /*
-<a href="querystring.php?book=Harry Potter">Harry Potter</a>
-<a href="querystring.php?book=Beauty & the Beast">Beauty & the Beast</a>
-*/?>
 
-<a href="querystring.php?<?php echo http_build_query(['book' => 'Harry Potter']); ?>">Harry Potter</a>
-<a href="querystring.php?<?php echo http_build_query(['book' => 'Beauty & the Beast', 'author' => 'Gabrielle-Suzanne Barbot de Villeneuve']); ?>">Beauty & the Beast</a>
+<!-- <a href="querystring.php?book=Harry Potter">Harry Potter</a>
+<a href="querystring.php?book=Beauty & the Beast">Beauty & the Beast</a> -->
+
+
+<a href="querystring.php?<?php echo http_build_query(['book' => 'Harry Potter']);?>">Harry Potter</a>
+<a href="querystring.php?<?php echo http_build_query(['book' => 'Beauty & the Beast', 'author' => 'Someone']);?>">Beauty & the Beast</a>
+
 </body>
 </html>
