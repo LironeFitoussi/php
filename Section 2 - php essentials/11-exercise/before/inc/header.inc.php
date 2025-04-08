@@ -18,7 +18,7 @@
     <p>Your sanctuary for exceptional flavors</p>
     <nav>
       <?php
-        if (!isset($pageKey)) $pageKey = '';
+        if (!isset($pageKey)) $pageKey = ''; // Better for error handeling
       ?>
       <a
         <?php if ($pageKey === 'mission'): ?>
