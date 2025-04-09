@@ -36,7 +36,7 @@
             'sunset_risotto' => "Sunset Risotto",
             'tropical_tacos' => "Tropical Tango Tacos"
         ];
-        if (!empty($currentPage) && in_array($currentPage, $pages)) {
+        if (!empty($currentPage) && in_array($currentPage, array_values($pages))) {
             echo file_get_contents("pages/{$_GET['page']}.html");
         };
     ?>
