@@ -8,14 +8,10 @@
 </head>
 <body><pre><?php
 
-// var_dump(__DIR__ . '/inc/a.php');
-
-var_dump(dirname(__FILE__));
-
+var_dump(__FILE__);
 include dirname(__FILE__) . '/inc/a.php';
-
-include __DIR__ . '/inc/a.php';
-    
+// include __DIR__ . '/inc/a.php';
+include __DIR__ . '/pages/file.php';
 ?></pre>
 </body>
 </html>
