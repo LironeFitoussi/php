@@ -4,8 +4,6 @@ include './inc/images.inc.php';
 ?>
 <?php include './views/header.php'; ?>
 
-<?php var_dump($imageTitles); ?>
-
 <?php foreach ($imageTitles as $key => $value): ?>
     <figure>
         <figcaption>
@@ -13,7 +11,7 @@ include './inc/images.inc.php';
                 <?php echo $value?>
             </a>
         </figcaption>
-        <img style="max-width: 20rem" src="<?php echo rawurldecode("images/{$key}")?>" alt="<?php echo $value?>">
+        <img src="<?php echo rawurldecode("images/{$key}")?>" alt="<?php echo $value?>">
     </figure>
 <?php endforeach ?>
 
