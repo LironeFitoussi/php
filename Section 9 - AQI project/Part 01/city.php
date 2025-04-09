@@ -15,9 +15,20 @@ if (!empty($city)) {
 };
 
 if ($filename) {
-    // echo "<p>Data for the city <strong>{$city}</strong> has been found.</p>";
-    $data = json_decode(file_get_contents('compress.bzip2://' . __DIR__ . "/../data/{$filename}"), true)["results"];
-    var_dump($data);
+    $results = json_decode(file_get_contents('compress.bzip2://' . __DIR__ . "/../data/{$filename}"), true)["results"];
+
+    $stats = [];
+    foreach ($results as $result) {
+        if ($result['parameter'] !== 'pm25') continue;
+
+        $month = substr($result['date']['local'], 0, 7);
+        if (!isset($stats[$month])) {
+            $stats[$month] = [];
+        };
+        $stats[$month][] = $result['value'];
+
+    };
+    // var_dump($stats);
 };
 
 
@@ -30,8 +41,17 @@ require __DIR__ . '/views/header.inc.php';
 <?php if (empty($city)): ?>
     <p>The city you are looking for does not exist.</p>
 <?php else: ?>
-
-<?php endif ?>
+    <?php if (!empty($stats)): ?>
+        <table>
+            <?php foreach ($stats as $month => $mes): ?>
+                <tr>
+                    <th><?= e($month) ?></th>
+                    <td><?= e(array_sum($mes) / count($mes)) ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    <?php endif; ?>
+<?php endif; ?>
 <?php
 require __DIR__ . '/views/footer.inc.php';
 ?>
