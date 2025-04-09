@@ -13,27 +13,26 @@ $str = 'PHP';
 
 var_dump($number);
 var_dump($str);
-
+    
 var_dump(is_bool($number));
+var_dump(is_numeric($number));
 var_dump(is_integer($number));
 var_dump(is_float($number));
-var_dump(is_numeric($number));
 var_dump(is_string($number));
 var_dump(is_array($number));
 
-$entries = [
-    ['title' => 'The most famous band!'],
-    'A classical concert'
+$enteris = [
+    ['title' => 'The most famous band'],
+    'A classical concert',
 ];
 
-foreach ($entries AS $entry) {
-    if (is_array($entry)) {
-        var_dump($entry['title']);
-    }
-    else {
-        var_dump($entry);
-    }
+foreach ($enteris as $entery) {
+    if (is_array($entery)) {
+        var_dump($entery['title']);
+    } else {
+        var_dump($entery);
+    };
 }
-    
+
 ?></pre></body>
 </html>
