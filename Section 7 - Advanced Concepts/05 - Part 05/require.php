@@ -7,8 +7,7 @@
     <title>Document</title>
 </head>
 <body><pre><?php
-
-// require __DIR__ . '/inc/functions.php';
+// require __DIR__ . '/inc/functions.inc.php';
 require_once __DIR__ . '/inc/all.inc.php';
 require_once __DIR__ . '/inc/functions.inc.php';
 require_once __DIR__ . '/inc/functions.inc.php';
