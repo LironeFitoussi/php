@@ -71,11 +71,11 @@ $courses = [
 
 <?php foreach ($courses AS $course): ?>
     <details>
-        <summary><?php echo e($course['flag']); ?> <?php echo e($course['title']); ?></summary>
+        <summary><?php echo !empty($course['flag']) ? e($course['flag']) : ''; ?> <?php echo e($course['title']); ?></summary>
         <p><?php echo e($course['desc']); ?></p>
         <?php if (!empty($course['topics'])): ?>
             <ul>
-                <?php foreach ($course['topics'] AS $topic): ?>
+                <?php foreach ($course['topics'] as $topic): ?>
                     <li><?php echo e($topic); ?></li>
                 <?php endforeach; ?>
             </ul>
