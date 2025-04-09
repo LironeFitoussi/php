@@ -5,14 +5,10 @@ include './inc/images.inc.php';
 <?php include './views/header.php'; ?>
 
 <?php foreach ($imageTitles as $key => $value): ?>
-    <figure>
-        <figcaption>
-            <a href="image.php?<?php echo http_build_query(["img" => $value])?>">
-                <?php echo $value?>
-            </a>
-        </figcaption>
-        <img src="<?php echo rawurldecode("images/{$key}")?>" alt="<?php echo $value?>">
-    </figure>
+    <a href="image.php?<?php echo http_build_query(["img" => $key]) ?>">        
+        <h3><?php echo e($value) ?></h3>
+        <img src="<?php echo rawurldecode("./images/{$key}") ?>" alt="<?php echo $value ?>">
+    </a>
 <?php endforeach ?>
 
 <?php include './views/footer.php'; ?>
