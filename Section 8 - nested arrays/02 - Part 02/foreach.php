@@ -30,24 +30,23 @@ $courses = [
     ]
 ];
 
-foreach ($courses AS $course) {
-    var_dump($course['title']);
-    var_dump($course['desc']);
-    var_dump($course['flag']);
-}
+// foreach ($courses as $course) {
+//     var_dump($course['title']);
+//     var_dump($course['desc']);
+//     var_dump($course['flag']);
+// }
 
-foreach ($courses[2] AS $value) {
+foreach ($courses[2] as $value) {
     var_dump($value);
 }
 
 ?></pre>
 
-<?php foreach ($courses AS $course): ?>
+<?php foreach ($courses as $course):?>
     <details>
-        <summary><?php echo e($course['flag']); ?> <?php echo e($course['title']); ?></summary>
-        <p><?php echo e($course['desc']); ?></p>
+        <summary><?php echo  e($course['flag']) . " " . e($course['title'])?></summary>
+        <p><?php echo e($course['desc'])?></p>
     </details>
-<?php endforeach; ?>
-
+<?php endforeach ?>
 </body>
 </html>
