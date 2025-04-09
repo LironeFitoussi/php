@@ -1,10 +1,10 @@
 <?php
-/*
+
 $contents = file_get_contents(__DIR__ . '/../data/index.json');
 $data = json_decode($contents, true);
 var_dump($data);
 var_dump($data[0]['city']);
-*/
+
 
 // echo filesize('__DIR__ . '/../data/singapore.json.bz2');
 
