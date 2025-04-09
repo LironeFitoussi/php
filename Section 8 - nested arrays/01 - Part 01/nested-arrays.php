@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./simple.css"/>
+    <link rel="stylesheet" type="text/css" href="./simple.css" />
     <title>Document</title>
 </head>
-<body><pre><?php
-/*
-$courses = [
-    'German for Beginners',
-    'French for Beginners',
-    'Spanish for Beginners'
-];
 
-$coursesDesc = [
-    'Learn basic German vocabulary, grammar, and everyday phrases.',
-    'Master fundamental French skills including basic vocabulary and conversational techniques.',
-    'Acquire essential Spanish vocabulary and gain proficiency in daily conversations.'
-];
+<body>
+    <pre><?php
+            // $courses = [
+            //     'German for Beginners',
+            //     'French for Beginners',
+            //     'Spanish for Beginners'
+            // ];
 
-$coursesFlags = [
-    '🇩🇪',
-    '🇫🇷',
-    '🇪🇸'
-];
-*/
-$courses = [
-    [
-        'title' => 'German for Beginners',
-        'desc' => 'Learn basic German vocabulary, grammar, and everyday phrases.',
-        'flag' => '🇩🇪'
-    ],
-    [
-        'title' => 'French for Beginners',
-        'desc' => 'Master fundamental French skills including basic vocabulary and conversational techniques.',
-        'flag' => '🇫🇷'
-    ],
-    [
-        'title' => 'Spanish for Beginners',
-        'desc' => 'Acquire essential Spanish vocabulary and gain proficiency in daily conversations.',
-        'flag' => '🇪🇸'
-    ]
-];
+            // $coursesDescriptions = [
+            //     'Learn the fundamentals of German, including vocabulary and grammar, to start speaking confidently.',
+            //     'Explore the basics of French with practical exercises and cultural insights.',
+            //     'Master essential Spanish phrases and grammar for everyday conversations.'
+            // ];
 
+            // $coursesFlags = [
+            //     '🇩🇪',
+            //     '🇫🇷',
+            //     '🇪🇸'
+            // ];
 
-var_dump($courses[0]['title']);
-var_dump($courses[0]['flag']);
+            $courses = [
+                [
+                    'title' => 'German for Beginners',
+                    'description' => 'Learn the fundamentals of German, including vocabulary and grammar, to start speaking confidently.',
+                    'flag' => '🇩🇪'
+                ],
+                [
+                    'title' => 'French for Beginners',
+                    'description' => 'Explore the basics of French with practical exercises and cultural insights.',
+                    'flag' => '🇫🇷'
+                ],
+                [
+                    'title' => 'Spanish for Beginners',
+                    'description' => 'Master essential Spanish phrases and grammar for everyday conversations.',
+                    'flag' => '🇪🇸'
+                ]
+            ];
 
-$spanishCourse = $courses[2];
-var_dump($spanishCourse['title']);
-var_dump($spanishCourse['flag']);
+            // var_dump($courses[1]["title"]);
+            // var_dump($courses[1]["flag"]);
+            // var_dump($courses[2]["title"]);
+            // var_dump($courses[2]["flag"]);
 
-?></pre></body>
+            $spanishCourse = $courses[2];
+
+            var_dump($spanishCourse['title']);
+            ?></pre>
+</body>
+
 </html>
