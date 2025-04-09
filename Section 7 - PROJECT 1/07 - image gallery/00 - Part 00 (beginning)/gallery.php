@@ -1,7 +1,6 @@
 <?php
 include './inc/functions.inc.php';
 include './inc/images.inc.php';
-
 ?>
 <?php include './views/header.php'; ?>
 
@@ -9,8 +8,12 @@ include './inc/images.inc.php';
 
 <?php foreach ($imageTitles as $key => $value): ?>
     <figure>
-        <figcaption><?php echo $value?></figcaption>
-        <img src="<?php echo $key?>" alt="<?php echo $value?>">
+        <figcaption>
+            <a href="image.php?<?php echo http_build_query(["img" => $value])?>">
+                <?php echo $value?>
+            </a>
+        </figcaption>
+        <img style="max-width: 20rem" src="<?php echo rawurldecode("images/{$key}")?>" alt="<?php echo $value?>">
     </figure>
 <?php endforeach ?>
 
