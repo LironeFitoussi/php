@@ -1,13 +1,15 @@
 <?php
-
+/*
 $contents = file_get_contents(__DIR__ . '/../data/index.json');
 $data = json_decode($contents, true);
-var_dump($data);
-var_dump($data[0]['city']);
+var_dump($data[0]);
+*/
 
+// echo filesize(__DIR__ . '/../data/singapore.json.bz2');
 
-// echo filesize('__DIR__ . '/../data/singapore.json.bz2');
+// echo file_get_contents(__DIR__ . '/../data/singapore.json.bz2');
 
 // phpinfo();
-$data = json_decode(file_get_contents('compress.bzip2://' . __DIR__ . '/../data/singapore.json.bz2'), true);
+
+$data = json_decode(file_get_contents('compress.bzip2://' . __DIR__ . '/../data/berlin.json.bz2'), true);
 var_dump($data);
