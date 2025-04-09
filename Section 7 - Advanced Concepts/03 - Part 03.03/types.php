@@ -16,6 +16,6 @@ if (isset($_GET['name'])) {
 }
     
 ?></pre>
-<a href="types.php?<?php echo http_build_query(['name' => ['Jannis', 'Olivia']]); ?>">Link</a>
+<a href="types.php?<?php echo http_build_query(['name' => ['Dan', 'Olivia']]); ?>">Link</a>
 </body>
 </html>
