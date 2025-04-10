@@ -17,8 +17,8 @@
         // $number++;
         $number = $number + 1;
     }
-    var_dump($number);
-    var_dump($sum);
+    // var_dump($number);
+    // var_dump($sum);
 
 ?></pre>
 </body>
