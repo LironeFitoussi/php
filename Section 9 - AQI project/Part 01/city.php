@@ -69,10 +69,7 @@ require __DIR__ . '/views/header.inc.php';
     <p>The city you are looking for does not exist.</p>
 <?php else: ?>
     <?php if (!empty($stats)): ?>
-        <canvas id="aqi-chart"
-            style="width: 300px; height: 200px;">
-
-        </canvas>
+        <canvas id="aqi-chart" style="width: 300px; height: 200px;"></canvas>
         <script src="./scripts/chart.umd.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
