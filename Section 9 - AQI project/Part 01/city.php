@@ -77,18 +77,34 @@ require __DIR__ . '/views/header.inc.php';
         <script>
             document.addEventListener("DOMContentLoaded", () => {
                 const ctx = document.getElementById("aqi-chart");
+                const types = <?= json_encode($types) ?>;
+                const stats = <?= json_encode(array_keys($stats)) ?>;
+                const units = <?= json_encode($units) ?>;
+                const statsData = <?= json_encode(array_values($stats)) ?>;
+                const data = {}; 
+                types.forEach((type) => {
+                    data[type] = statsData.map((monthData) => {
+                        const values = monthData[type] || [];
+                        return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0;
+                    })
+                });
+                
+                const datasets = types.map((type, index) => {
+                    return {
+                        label: `${type} (${units[type]})`,
+                        data: data[type],
+                        fill: false,
+                        borderColor: `hsl(${index * 360 / types.length}, 100%, 50%)`,
+                        tension: 0.1
+                    };
+                });
+
                 if (ctx) {
                     const chart = new Chart(ctx, {
                         type: 'line',
                         data: {
-                            labels: [ 'Label 1', 'Label 2', 'Label 2', 'Label 2', 'Label 2', 'Label 2', 'Label 2'],
-                            datasets: [{
-                                label: 'My First Dataset',
-                                data: [65, 59, 80, 81, 56, 55, 40],
-                                fill: false,
-                                borderColor: 'rgb(75, 192, 192)',
-                                tension: 0.1
-                            }]
+                            labels: stats,
+                            datasets: datasets
                         }
                     });
                 }
