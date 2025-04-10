@@ -4,11 +4,13 @@ $city = null;
 if (!empty($_GET['city'])) $city = $_GET['city'];
 
 $filename = null;
+$cityInformation = [];
 if (!empty($city)) {
     $cities = json_decode(file_get_contents(__DIR__ . '/../data/index.json'), true);
     foreach ($cities as $cityData) {
         if (in_array($city, $cityData)) {
             $filename = $cityData['filename'];
+            $cityInformation = $cityData;
             break;
         }
     };
@@ -19,16 +21,41 @@ if ($filename) {
 
     $stats = [];
     foreach ($results as $result) {
-        if ($result['parameter'] !== 'pm25') continue;
+        // if ($result['parameter'] !== 'pm25' || $result['value'] <= 0) continue;
 
         $month = substr($result['date']['local'], 0, 7);
+        $type = $result['parameter'];
+
         if (!isset($stats[$month])) {
             $stats[$month] = [];
         };
-        $stats[$month][] = $result['value'];
 
+        if (!isset($stats[$month][$type])) {
+            $stats[$month][$type] = [];
+        };
+
+
+        $stats[$month][$type][] = $result['value'];
     };
-    // var_dump($stats);
+
+    // Get total types:
+    $units = [];
+
+    $types = (array_keys(reset($stats)));
+    foreach ($types as $type) {
+        foreach ($results as $result) {
+            if (!isset($units[$type])) {
+                foreach ($results as $result) {
+                    if ($result['parameter'] === $type) {
+                        $units[$type] = $result['unit'];
+                        break;
+                    }
+                }
+            };
+        };
+    };
+
+    var_dump($units);
 };
 
 
@@ -42,11 +69,23 @@ require __DIR__ . '/views/header.inc.php';
     <p>The city you are looking for does not exist.</p>
 <?php else: ?>
     <?php if (!empty($stats)): ?>
+        <h2>City Information</h2>
+        <ul>
+            <h3><?= e($cityInformation['city']) ?>, <?= e($cityInformation['country']) ?> <small><?= e($cityInformation['flag']) ?></small></h3>
+        </ul>
         <table>
+            <tr>
+                <th>Month</th>
+                <?php foreach ($types as $type): ?>
+                    <th><?= e($type) ?></th>
+                <?php endforeach; ?>
+            </tr>
             <?php foreach ($stats as $month => $mes): ?>
                 <tr>
                     <th><?= e($month) ?></th>
-                    <td><?= e(array_sum($mes) / count($mes)) ?></td>
+                    <?php foreach ($mes as $typeKey => $typeValues): ?>
+                        <td><?= e(round(array_sum($typeValues) / count($typeValues), 2)) ?> <?= e($units[$typeKey]) ?></td>
+                    <?php endforeach ?>
                 </tr>
             <?php endforeach; ?>
         </table>
