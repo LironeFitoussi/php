@@ -23,15 +23,17 @@
         ];
         while (($currentFile = readdir($handle)) !== false) {
             $extension = pathinfo($currentFile, PATHINFO_EXTENSION);
+            $filename = pathinfo($currentFile, PATHINFO_FILENAME);
             if ($currentFile === '.' || $currentFile === '..' || !in_array($extension, $allowedExtensions)) {
-                continue;
+            continue;
             }
 
-            var_dump($currentFile);
-            var_dump($extension);
-            $txtFile = str_replace(".{$extension}", ".txt", $currentFile);
-
-            $images[$currentFile] = file_get_contents(__DIR__ . "/images/{$txtFile}");
+            $textFilePath = __DIR__ . "/images/{$filename}.txt";
+            if (file_exists($textFilePath) && is_readable($textFilePath)) {
+            $images[$currentFile] = file_get_contents($textFilePath);
+            } else {
+            $images[$currentFile] = 'No description available';
+            }
         }
         // var_dump($images);
         closedir($handle);
