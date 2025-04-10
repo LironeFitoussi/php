@@ -1,15 +1,20 @@
-<?php
+<pre>
 
-$zip = new ZipArchive();
-$zip->open(__DIR__ . '/Archive.zip');
+    <?php
 
-var_dump($zip->count());
-
-var_dump($zip);
-
-$numFiles = $zip->count();
-for ($x = 0; $x < $numFiles; $x++) {
-    var_dump($zip->getNameIndex($x));
-}
-
-var_dump($zip->getFromName('message.txt'));
+    // Special PHP Build-in
+    $zip = new ZipArchive();
+    echo "\n--------\n";
+    $zip->open(__DIR__ . '/Archive.zip');
+    echo "\n--------\n";
+    var_dump($zip);
+    echo "\n--------\n";
+    $numFiles = $zip->count();
+    for ($i = 0; $i < $numFiles; $i++) {
+        var_dump($zip->getNameIndex($i));
+    }
+    
+    var_dump($zip->getFromName('message.txt'));
+    $zip->close();
+    ?>
+</pre>

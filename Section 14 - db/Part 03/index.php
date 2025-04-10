@@ -1,9 +1,6 @@
 <?php
-
-$pdo = new PDO('mysql:host=localhost;dbname=note_app', 'root', '', [
+$pdo = new PDO('mysql:host=localhost;dbname=note_app;unix_socket=/tmp/mysql.sock', 'root', 'baba1234', [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
-// var_dump(PDO::ATTR_ERRMODE);
-// var_dump(PDO::ERRMODE_EXCEPTION);
 
 var_dump($pdo);
