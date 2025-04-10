@@ -2,9 +2,9 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 19, 2023 at 10:33 AM
--- Server version: 10.4.28-MariaDB
+-- Host: 127.0.0.1:3306
+-- Generation Time: Apr 10, 2025 at 10:31 AM
+-- Server version: 8.4.4
 -- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -28,20 +28,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `firstname` varchar(100) NOT NULL,
-  `lastname` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `phone` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` varchar(36) NOT NULL,
+  `firstname` varchar(100) DEFAULT NULL,
+  `lastname` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES
-(1, 'Emily', 'Carter', 'emily-carter@gmail.com', '555-123-45678'),
-(2, 'Robert', 'Wilson', 'robert.wilson@example.com', '123-456-7890');
+('2e24d654-15e4-11f0-a597-033c2505aa46', 'Matan', 'Talmid', '\"', '\"');
 
 --
 -- Indexes for dumped tables
@@ -52,16 +51,6 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
