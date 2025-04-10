@@ -22,28 +22,26 @@
             'png'
         ];
         while (($currentFile = readdir($handle)) !== false) {
-            if ($currentFile === '.' || $currentFile === '..') {
-                continue;
-            }
             $extension = pathinfo($currentFile, PATHINFO_EXTENSION);
-            /*
-            if ($extension !== 'jpg' && $extension !== 'jpeg' && $extension !== 'png') {
-                continue;   
-            }
-            */
-            if (!in_array($extension, $allowedExtensions)) {
+            if ($currentFile === '.' || $currentFile === '..' || !in_array($extension, $allowedExtensions)) {
                 continue;
             }
+
             var_dump($currentFile);
             var_dump($extension);
-            $images[] = $currentFile;
-        }
+            $txtFile = str_replace(".{$extension}", ".txt", $currentFile);
 
+            $images[$currentFile] = file_get_contents(__DIR__ . "/images/{$txtFile}");
+        }
+        // var_dump($images);
         closedir($handle);
     ?></pre>
 
-        <?php foreach($images AS $image): ?>
-            <img src="images/<?php echo rawurlencode($image); ?>" alt="" />
+        <?php foreach($images AS $image => $desc): ?>
+            <figure>
+                <img src="images/<?php echo rawurlencode($image); ?>" alt="" />
+                <figcaption><?=$desc; ?></figcaption>
+            </figure>
         <?php endforeach; ?>
 
     </main>
