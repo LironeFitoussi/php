@@ -9,16 +9,16 @@
 <body>
     <header><h1>Automatic Image List</h1></header>
     <main><pre><?php 
-        $handle = opendir(__DIR__ . '/images');
-        var_dump($handle);
-        var_dump(readdir($handle));
-        var_dump(readdir($handle));
-        var_dump(readdir($handle));
-        var_dump(readdir($handle));
-        var_dump(readdir($handle));
-        var_dump(readdir($handle));
-        var_dump(readdir($handle));
-        closedir($handle);
+        // $handle = opendir(__DIR__ . '/images');
+        // var_dump($handle);
+        // var_dump(readdir($handle));
+        // var_dump(readdir($handle));
+        // var_dump(readdir($handle));
+        // var_dump(readdir($handle));
+        // var_dump(readdir($handle));
+        // var_dump(readdir($handle));
+        // var_dump(readdir($handle));
+        // closedir($handle);
     ?></pre></main>
 </body>
 </html>
