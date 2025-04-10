@@ -55,7 +55,7 @@ if ($filename) {
         };
     };
 
-    var_dump($units);
+    // var_dump($units);
 };
 
 
@@ -69,6 +69,32 @@ require __DIR__ . '/views/header.inc.php';
     <p>The city you are looking for does not exist.</p>
 <?php else: ?>
     <?php if (!empty($stats)): ?>
+        <canvas id="aqi-chart"
+            style="width: 300px; height: 200px;">
+
+        </canvas>
+        <script src="./scripts/chart.umd.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const ctx = document.getElementById("aqi-chart");
+                if (ctx) {
+                    const chart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: [ 'Label 1', 'Label 2', 'Label 2', 'Label 2', 'Label 2', 'Label 2', 'Label 2'],
+                            datasets: [{
+                                label: 'My First Dataset',
+                                data: [65, 59, 80, 81, 56, 55, 40],
+                                fill: false,
+                                borderColor: 'rgb(75, 192, 192)',
+                                tension: 0.1
+                            }]
+                        }
+                    });
+                }
+            });
+        </script>
+
         <h2>City Information</h2>
         <ul>
             <h3><?= e($cityInformation['city']) ?>, <?= e($cityInformation['country']) ?> <small><?= e($cityInformation['flag']) ?></small></h3>
