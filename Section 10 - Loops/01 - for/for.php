@@ -15,6 +15,14 @@
             }
             ?></pre>
 
+    <ul>
+        <?php for ($number = 0; $number <= 100; $number++): ?>
+            <?php if ($number % 2 !== 0 || $number === 0) continue; ?>
+            <li>
+                <?= $number ?>
+            </li>
+        <?php endfor ?>
+    </ul>
 </body>
 
 </html>
