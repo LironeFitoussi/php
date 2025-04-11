@@ -41,7 +41,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: fit-content;
+    /* width: fit-content; */
     height: fit-content;
     gap: 0.5rem; /* Adds spacing between the icon and text */
 }
@@ -54,4 +54,24 @@ nav {
 .button:hover {
     background-color: #d95032;
     color: #ffffff;
+}
+
+.main-heading {
+    color: #113343;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .25em;
+}
+
+.card {
+    background-color: #f3f4f5;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.card__heading {
+    margin: 0;
 }
