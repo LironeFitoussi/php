@@ -1,123 +1,169 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: system-ui, -apple-system, 
-        "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", 
-        "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", 
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 nav {
-    background-color: #113343;
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 9rem;
+  background-color: #113343;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 9rem;
 }
 
 .nav-brand {
-    display: block;
-    color: #ffffff;
-    text-decoration: none;
-    height: 4rem;
-    line-height: 4rem;
-
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  height: 4rem;
+  line-height: 4rem;
 }
 
 .nav-brand__image {
-    width: 3rem;
-    height: 4rem;
-    vertical-align: bottom;
-    color: #71b86a;
+  width: 3rem;
+  height: 4rem;
+  vertical-align: bottom;
+  color: #71b86a;
 }
 
 .nav-brand:hover .nav-brand__image:hover {
-    color: #8ed8a9;
+  color: #8ed8a9;
 }
 
 .button {
-    background-color: #F35A39;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: .5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* width: fit-content; */
-    height: fit-content;
-    gap: 0.5rem; /* Adds spacing between the icon and text */
+  background-color: #f35a39;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: fit-content; */
+  height: fit-content;
+  gap: 0.5rem; /* Adds spacing between the icon and text */
 }
 
 .button__icon {
-    width: 1.5rem;
-    height: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .button:hover {
-    background-color: #d95032;
-    color: #ffffff;
+  background-color: #d95032;
+  color: #ffffff;
 }
 
 .main-heading {
-    color: #113343;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: .25em;
+  color: #113343;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.25em;
 }
 
 .container {
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin: 0 auto;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
 }
 
 .card {
-    display: flex;
-    background-color: #f3f4f5;
-    padding: 0;
-    margin-bottom: 2rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  background-color: #f3f4f5;
+  padding: 0;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
-/* .card__image-container {
-} */
+.card__image-container {
+  /* height: 20rem; */
+}
+
+.card__desc-container {
+  padding-right: 2rem;
+  padding-left: 2rem;
+
+}
 
 .card__image {
-    display: block;
-    width: 30rem;
-    border-radius: 1rem 0 0 1rem;
-    aspect-ratio: 16/9;
-    object-fit: cover;
+  display: block;
+  width: 10rem;
+  height: 2rem;
+  min-height: 100%;
+  /* aspect-ratio: 16/9; */
+  object-fit: cover;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .card__heading {
-    margin: 0;
+  margin: 0;
+}
+
+.card__desc-time {
+  color: #328677;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.card__heading {
+  color: #113343;
+  font-size: 1.75rem;
+}
+
+.card__heading::after {
+  content: "";
+  display: block;
+  width: 6rem;
+  height: 0.125rem;
+  background-color: #328677;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Media Queries */
+/* Mobile */
+@media (max-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
 
-@media (min-width: 576px) {
-    .container {
-        max-width: 540px;
+  .card {
+    flex-direction: column  ;
+  }
+
+    .card__image-container {
+        width: 100%;
+        height: 20rem;
+    }
+
+    .card__image {
+        width: 100%;
+        height: 2rem;
+        min-height: 100%;
+        box-shadow: none;
     }
 }
 
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px;
-    }
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
 }
 
-@media (min-width: 992px) {
-    .container {
-        max-width: 960px;
-    }
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
 }
