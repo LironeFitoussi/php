@@ -78,11 +78,24 @@ nav {
 }
 
 .card {
+    display: flex;
     background-color: #f3f4f5;
-    padding: 1rem;
+    padding: 0;
     margin-bottom: 2rem;
     border-radius: 1rem;
+    overflow: hidden;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+/* .card__image-container {
+} */
+
+.card__image {
+    display: block;
+    width: 30rem;
+    border-radius: 1rem 0 0 1rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
 }
 
 .card__heading {
