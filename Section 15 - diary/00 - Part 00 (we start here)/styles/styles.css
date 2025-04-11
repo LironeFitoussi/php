@@ -14,7 +14,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0 10rem ;
 }
 
 .nav-brand {
@@ -72,6 +72,7 @@ nav {
     padding-left: 1rem;
     padding-right: 1rem;
     margin: 0 auto;
+    padding: 0 10rem ;
 }
 
 .card {
@@ -95,6 +96,7 @@ nav {
     height: 2rem;
     min-height: 100%;
     object-fit: cover;
+    border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
@@ -130,21 +132,34 @@ nav {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    gap: .5rem;
+    gap: .25rem;
     justify-content: right;
     padding: 1rem;
+    padding: 0 10rem ;
 }
 
 .pagination_link {
     display: flex;
-    color: #328677;
+    color: #113343;
     align-items: center;
     justify-content: center;
-    border: #328677 solid 0.125rem;
+    border: rgb(200, 200, 200) solid 0.125rem;
     width: 2rem;
     height: 2rem;
     border-radius: 0.5rem;
     text-decoration: none;
+}
+
+.pagination_link:hover {
+    background-color: #328677;
+    color: #ffffff;
+    border: #328677 solid 0.125rem;
+}
+
+.pagination_link--active {
+    /* background-color: #328677; */
+    color: #328677;
+    border: #328677 solid 0.125rem;
 }
 
 /* Media Queries */
