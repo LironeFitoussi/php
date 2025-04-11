@@ -3,7 +3,7 @@
   <defs>
     <style>
       .uuid-0856028e-73cc-438c-82b9-593eb920c5dd {
-        stroke: #235346;
+        stroke: rgba(65,84,79,0.814);
         stroke-miterlimit: 10;
         stroke-width: 3px;
       }
@@ -13,7 +13,7 @@
       }
 
       .uuid-e4c1e5eb-cc49-42cf-9716-29ba2679ac5a {
-        opacity: .1;
+        opacity: .3;
       }
     </style>
   </defs>
