@@ -4,3 +4,28 @@ html {
         "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", 
         "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+nav {
+    background-color: #113343;
+    height: 4rem;
+    display: flex;
+}
+
+.nav-brand {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    height: 4rem;
+    line-height: 4rem;
+}
+
+.nav-brand__image {
+    width: 3rem;
+    height: 4rem;
+    vertical-align: bottom;
+    color: #71b86a;
+}
+
+.nav-brand:hover .nav-brand__image:hover {
+    color: #8ed8a9;
+}
