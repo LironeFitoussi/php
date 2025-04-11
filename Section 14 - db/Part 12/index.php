@@ -1,19 +1,22 @@
 <?php
 
-function e($value) {
+function e($value)
+{
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
 
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=note_app', 'root', '', [
+    $pdo = new PDO('mysql:host=localhost;dbname=note_app;unix_socket=/tmp/mysql.sock', 'root', 'fds f sdf ', [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
-}
-catch (PDOException $e) {
-    // var_dump($e->getMessage());
-    echo 'A problem occured with the database connection...';
+} catch (PDOException $e) {
+    //throw $th;
+    echo "A database error occurred. Please try again later. \n ";
+    var_dump($e->getMessage());
     die();
 }
+
+
 
 /*
 $stmt = $pdo->prepare('UPDATE `notes` SET `title` = :title, `content` = :content WHERE `id` = :id');
