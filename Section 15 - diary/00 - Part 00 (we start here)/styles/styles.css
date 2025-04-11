@@ -196,6 +196,12 @@ main::after {
     border: #328677 solid 0.125rem;
 }
 
+
+.footer {
+    background-color: #113343;
+    padding-top: 3rem;
+}
+
 /* Media Queries */
 /* Mobile */
 @media (max-width: 576px) {
