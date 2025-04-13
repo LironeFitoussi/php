@@ -1,6 +1,9 @@
 <?php
 require __DIR__ . '/inc/db-connect.inc.php';
 require __DIR__ . '/inc/functions.inc.php';
+
+date_default_timezone_set('Asia/Jerusalem');
+
 global $query;
 $perPage = 2;
 $page = $_GET['page'] ?? 1;
@@ -19,7 +22,13 @@ $entries = query('SELECT * FROM entries ORDER BY `date` DESC , `id` DESC LIMIT :
             <img class="card__image" src="images/pexels-canva-studio-3153199.jpg" alt="" />
         </div>
         <div class="card__desc-container">
-            <div class="card__desc-time"><?= e($card["date"]) ?></div>
+            <?php 
+                $dateExploded = explode("-", $card['date']);
+                var_dump($dateExploded);
+                $timestamp = mktime(12, 0, 0, $dateExploded[1], $dateExploded[2], $dateExploded[0]);
+                var_dump($timestamp);
+            ?>
+            <div class="card__desc-time"><?= date('m/d/y', $timestamp) ?></div>
             <h2 class="card__heading"><?= e($card["title"]) ?></h2>
             <p class="card__paragraph">
                 <?= e($card["message"]) ?>
