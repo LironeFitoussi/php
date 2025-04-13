@@ -18,15 +18,17 @@ $entries = query('SELECT * FROM entries ORDER BY `date` DESC , `id` DESC LIMIT :
 <h1 class="main-heading">Entries</h1>
 <?php foreach ($entries as $card): ?>
     <div class="card">
-        <div class="card__image-container">
-            <img class="card__image" src="images/pexels-canva-studio-3153199.jpg" alt="" />
-        </div>
+        <?php if (!empty($card['image'])): ?>
+            <div class="card__image-container">
+                <img class="card__image" src="uploads/<?= e($card['image']) ?>" alt="" />
+            </div>
+        <?php endif; ?>
         <div class="card__desc-container">
             <?php 
                 $dateExploded = explode("-", $card['date']);
-                var_dump($dateExploded);
+                // var_dump($dateExploded);
                 $timestamp = mktime(12, 0, 0, $dateExploded[1], $dateExploded[2], $dateExploded[0]);
-                var_dump($timestamp);
+                // var_dump($timestamp);
             ?>
             <div class="card__desc-time"><?= date('m/d/y', $timestamp) ?></div>
             <h2 class="card__heading"><?= e($card["title"]) ?></h2>

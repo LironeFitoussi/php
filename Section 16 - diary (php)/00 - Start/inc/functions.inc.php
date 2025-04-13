@@ -12,7 +12,7 @@ function query(string $query, array $binder): array
 
     foreach ($binder as $key => $value) {
         // var_dump($key);
-        $stmt->bindValue(":" . $key, $value, is_int((int)$value) ? PDO::PARAM_INT : PDO::PARAM_STR);
+        $stmt->bindValue(":" . $key, $value, ($key === 'perPage' || $key === 'offset') ? PDO::PARAM_INT : PDO::PARAM_STR);
     }
     // echo $stmt->queryString;
 
