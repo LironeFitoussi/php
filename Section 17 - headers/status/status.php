@@ -5,7 +5,7 @@ function e($value) {
 
 $id = (!empty($_GET['id']) ? (int) $_GET['id'] : 1);
 
-if ($id >= 5) {
+if ($id >= 5 || $id <= 0) {
     require __DIR__ . '/notfound.php';
     die();
 }
