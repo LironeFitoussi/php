@@ -1,35 +1,36 @@
 <?php
-
-function e($value) {
+function e($value)
+{
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
-
 $termsError = false;
-
+// var_dump($_POST)
+// var_dump($_SERVER);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_POST['terms'])) {
-        // Code to save the user in the DB
-    
+        // Code to save in DB
         header('Location: thankyou.php');
         die();
-    }
-    else {
+    } else {
         $termsError = true;
     }
-}
+};
 
-
-
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./simple.css" />
     <title>Document</title>
 </head>
+
 <body>
-    <header><h1>Sign up for the newsletter</h1></header>
+    <header>
+        <h1>Sign up for the newsletter</h1>
+    </header>
     <form method="POST" action="form.php">
         <label for="input_name">Your name:</label>
         <input type="text" name="name" id="input_name" value="<?php if (!empty($_POST['name'])) echo e($_POST['name']); ?>" />
@@ -44,9 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <input type="checkbox" name="terms" value="1" id="input_terms">
         <label for="input_terms">I have read the terms and want to receive emails</label>
-        
+
         <br />
         <input type="submit" value="Submit!" />
     </form>
 </body>
+
 </html>
