@@ -13,6 +13,7 @@ $entries = fetch_name_entries($name);
 render('name.view', [
     'name' => $name,
     'entries' => $entries,
+    'char' => $name[0],
 ]);
 ?>
 

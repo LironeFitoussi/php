@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +17,15 @@
         <p>Explore and find names</p>
         <nav>
             <?php foreach ($alphabet as $character): ?>
-                <a href="char.php?<?php echo http_build_query(['char' => $character]); ?>">
-                    <?php echo e($character); ?>
-                </a>
+                <?php if (!empty($char) && strtolower($character) === strtolower($char)): ?>
+                    <a class="active"><?php echo e($character); ?></a>
+                <?php else: ?>
+                    <a href="char.php?<?php echo http_build_query(['char' => $character]); ?>">
+                        <?php echo e($character); ?>
+                    </a>
+                <?php endif; ?>
             <?php endforeach; ?>
+
         </nav>
     </header>
     <main>
