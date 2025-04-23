@@ -5,16 +5,17 @@ function e($value) {
 }
 
 /**
- * THis function will generate all the letters of the alphabet as an array:
- * ["A", "B", "C", .... "X", "Y", "Z"]
-*/
+ * This function will generate all the letters of the alphabet as 
+ * an array: 
+ * ['A', 'B', 'C', ... , 'X', 'Y', 'Z']
+ */
 function gen_alphabet() {
+    $A = ord('A');
+    $Z = ord('Z');
+
     $letters = [];
-    for ($i = 65; $i <= 90; $i++) {
-        array_push($letters, chr($i)); 
+    for($x = $A; $x <= $Z; $x++) {
+        $letters[] = chr($x);
     }
     return $letters;
 }
-
-$alphabet =  gen_alphabet();
-?>
