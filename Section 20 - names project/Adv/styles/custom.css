@@ -2,3 +2,53 @@ a.active {
     background-color: var(--accent);
     color: white !important;
 }
+
+.name-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .name-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .name-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .name-link:hover {
+    color: #0056b3;
+  }
+  
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .page-number {
+    display: inline-block;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .page-number:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .active-page {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    font-weight: bold;
+  }
+  

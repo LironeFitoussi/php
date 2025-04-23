@@ -30,7 +30,10 @@
     </header>
     <main>
         <?= $content; ?>
+        <!-- Pagination -->
+         
     </main>
+
 </body>
 
 </html>

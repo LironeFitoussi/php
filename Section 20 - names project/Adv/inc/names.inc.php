@@ -1,11 +1,13 @@
 <?php
 declare(strict_types=1);
 
-function fetch_names_by_initial(string $char): array {
+function fetch_names_by_initial(string $char, int $page = 1, int $perPage = 15): array {
     global $pdo;
 
-    $stmt = $pdo->prepare('SELECT DISTINCT `name` FROM `names` WHERE `name` LIKE :expr ORDER BY `name` ASC');
-    $stmt->bindValue(':expr', "{$char}%");
+    $stmt = $pdo->prepare('SELECT DISTINCT `name` FROM `names` WHERE `name` LIKE :expr ORDER BY `name` ASC LIMIT :offset, :perPage');
+    $stmt->bindValue(':offset', ($page - 1) * $perPage, PDO::PARAM_INT);
+    $stmt->bindValue(':perPage', $perPage, PDO::PARAM_INT);
+    $stmt->bindValue(':expr', $char . '%');
     $stmt->execute();
     $names = [];
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -14,6 +16,25 @@ function fetch_names_by_initial(string $char): array {
     }
     return $names;
 }
+
+function fetch_name_count(string $name): int {
+    global $pdo;
+
+    $stmt = $pdo->prepare('SELECT COUNT(*) AS `count` FROM `names` WHERE `name` = :name');
+    $stmt->bindValue(':name', $name);
+    $stmt->execute();
+    return (int)$stmt->fetchColumn();
+};
+
+function fetch_char_count(string $char): int {
+    global $pdo;
+
+    $stmt = $pdo->prepare('SELECT COUNT(DISTINCT `name`) AS `count` FROM `names` WHERE `name` LIKE :expr');
+    $stmt->bindValue(':expr', $char . '%');
+    $stmt->execute();
+    return (int)$stmt->fetchColumn();
+};
+
 
 function fetch_name_entries(string $name): array {
     global $pdo;
