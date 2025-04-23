@@ -1,7 +1,11 @@
 <?php
 
+
+// user: root
+// pwd: baba1234
+
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=names;charset=utf8mb4', 'names', 'k/CG@c[@*JqNkICm', [
+    $pdo = new PDO('mysql:host=localhost;dbname=names;charset=utf8mb4', 'root', 'baba1234', [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
 }
@@ -11,8 +15,8 @@ catch (PDOException $e) {
     die();
 }
 
-/*
-$stmt = $pdo->prepare('SELECT * FROM `names`');
+
+$stmt = $pdo->prepare('SELECT * FROM `persons`');
 $stmt->execute();
-var_dump($stmt->fetch(PDO::FETCH_ASSOC));
-*/
+// var_dump($stmt->fetch(PDO::FETCH_ASSOC));
+
