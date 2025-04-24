@@ -13,6 +13,7 @@ var_dump($findings);
 var_dump($findings);
 
 // "/\w/" is equivalent to "/[a-zA-Z0-9_]/"
+// Note: The regex is looking for a sequence of word characters (letters, digits, or underscores).
 var_dump(preg_match('/\w/', $message, $findings));
 var_dump($findings);
 
